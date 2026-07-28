@@ -26,10 +26,12 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ onClos
     },
   ]);
 
-  const bottomRef = useRef<HTMLDivElement | null>(null);
+  const consoleRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (history.length > 1 && consoleRef.current) {
+      consoleRef.current.scrollTop = consoleRef.current.scrollHeight;
+    }
   }, [history]);
 
   const handleCommand = (cmdStr: string) => {
@@ -170,7 +172,7 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ onClos
       </div>
 
       {/* Console Output */}
-      <div className="p-4 h-64 overflow-y-auto space-y-3">
+      <div ref={consoleRef} className="p-4 h-64 overflow-y-auto space-y-3">
         {history.map((item, idx) => (
           <div key={idx} className="space-y-1">
             <div className="flex items-center gap-2 text-white">
@@ -180,7 +182,6 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ onClos
             <div className="pl-4">{item.output}</div>
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       {/* Input */}
