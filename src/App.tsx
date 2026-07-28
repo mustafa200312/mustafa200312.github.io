@@ -18,6 +18,11 @@ export const App: React.FC = () => {
   const [terminalModalOpen, setTerminalModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     const handleScroll = () => {
       const sections = ['work', 'experience', 'community', 'credentials', 'about', 'terminal'];
       const scrollPos = window.scrollY + 250;
