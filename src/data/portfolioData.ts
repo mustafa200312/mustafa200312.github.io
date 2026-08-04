@@ -46,7 +46,7 @@ export const PERSONAL_INFO = {
   name: "Mustafa Sultan",
   title: "AI Engineer",
   tagline: "I build AI systems that reason, retrieve, and act.",
-  bio: "AI Engineer building agentic workflows, LLM applications, and machine learning systems that move from research into reliable, useful products.",
+  bio: "AI engineer building multi-agent LLM applications, RAG systems, backend APIs, and computer vision models.",
   status: "AI engineering · applied research · Cairo, Egypt",
   email: "mustafa_sultan03@outlook.com",
   phone: "+201012442284",
@@ -70,11 +70,11 @@ export const PROJECTS: Project[] = [
     title: "FGaiB",
     highlightTitle: "Multi-Agent Personal Finance Android Application",
     subtitle: "GRADUATION GROUP PROJECT · RANKED 1ST",
-    description: "Developed collaboratively as an end-to-end Android product for managing financial data through natural-language interaction. The mobile app connects to Django Ninja APIs and PostgreSQL, while LangGraph coordinates agents for spending analysis, budgets, savings goals, recurring bills, alerts, and user requests. Validation and confirmation protect record-changing actions, and conversation memory preserves context across interactions.",
-    tags: ["Android", "LangGraph", "Django Ninja", "PostgreSQL", "REST APIs", "Tool Calling"],
+    description: "Developed collaboratively as an end-to-end personal finance application with a Python/Django backend and an agentic-coding-assisted mobile interface. LangGraph coordinates specialized financial agents for spending analysis, budgets, savings goals, recurring bills, alerts, and user requests. Confirmation gates protect record-changing actions, PostgreSQL-backed checkpoints preserve context, LangSmith traces agent runs, and a custom admin dashboard tracks usage, tokens, costs, forecasts, and anomalies.",
+    tags: ["LangGraph", "LangSmith", "Django Ninja", "PostgreSQL", "REST APIs", "Tool Calling"],
     category: "agent",
     featured: true,
-    metrics: ["1st Ranked Graduation Project", "LangGraph Agent Mesh", "Human-in-the-Loop Confirmation"],
+    metrics: ["1st Ranked Graduation Project", "LangSmith Tracing", "Admin Usage & Cost Analytics"],
     visualType: "finance"
   },
   {
@@ -83,8 +83,8 @@ export const PROJECTS: Project[] = [
     title: "SlideTutor",
     highlightTitle: "AI-Powered Study Workspace",
     subtitle: "FULL-STACK AI APPLICATION",
-    description: "Turns PowerPoint decks into an interactive study experience with slide-aware chat, structured extraction, summaries, and persistent learning context.",
-    tags: ["FastAPI", "React", "LangGraph", "OpenAI"],
+    description: "Built the FastAPI backend and AI pipeline for a PowerPoint study workspace with structured PPTX extraction, rendered slides, deck briefings, thread memory, and slide-aware agent tools. The web interface was developed with agentic coding assistance, and the model layer supports configurable OpenAI-compatible local and cloud providers.",
+    tags: ["FastAPI", "LangGraph", "LangChain", "python-pptx", "OpenAI-compatible APIs"],
     link: "https://github.com/mustafa200312/slidetutor",
     category: "agent",
     featured: true,
@@ -121,7 +121,7 @@ export const PROJECTS: Project[] = [
     description: "Built a multi-view medical-imaging system for longitudinal and transverse ultrasound scans using a frozen pretrained DINOv3 backbone. The architecture combines three-class segmentation—background, vessel, and plaque—with binary plaque classification informed by both views.",
     tags: ["PyTorch", "DINOv3", "Segmentation", "Transfer Learning", "Medical Imaging"],
     category: "vision",
-    metrics: ["Multi-task loss design", "Weighted sampling", "Per-class Dice & F1"],
+    metrics: ["Cross-entropy + Dice loss", "Class imbalance handling", "Per-class Dice & F1"],
     visualType: "ultrasound"
   },
   {
@@ -144,7 +144,7 @@ export const EXPERIENCES: Experience[] = [
     role: "AI Engineer Intern",
     organization: "CrossWorkers",
     location: "Cairo, Egypt",
-    description: "Built agentic lead-generation, HR analytics, and natural-language SQL systems. Integrated LLM APIs and LangGraph workflows across production backend services."
+    description: "Built agentic lead-generation, HR analytics, and natural-language SQL systems. Integrated LLM APIs and LangGraph workflows across backend services and live databases."
   },
   {
     period: "JUN — SEP 2024",
@@ -168,7 +168,7 @@ export const EXPERTISE_AREAS = [
   {
     icon: "⌁",
     title: "Agentic AI & LLMs",
-    skills: ["LangGraph", "LangChain", "RAG & Hybrid Search", "Tool Calling & Memory", "Prompt Engineering"]
+    skills: ["LangGraph", "LangChain", "LangSmith", "RAG & Hybrid Search", "Tool Calling & Memory"]
   },
   {
     icon: "◇",
