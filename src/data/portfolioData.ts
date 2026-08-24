@@ -44,10 +44,10 @@ export interface CommunityRole {
 
 export const PERSONAL_INFO = {
   name: "Mustafa Sultan",
-  title: "AI Engineer",
+  title: "AI/ML Engineer & Data Scientist",
   tagline: "I build AI systems that reason, retrieve, and act.",
-  bio: "AI engineer building multi-agent LLM applications, RAG systems, backend APIs, and computer vision models.",
-  status: "AI engineering · applied research · Cairo, Egypt",
+  bio: "AI/ML engineer and data scientist building machine learning, multi-agent LLM, RAG, backend API, and computer vision systems.",
+  status: "AI/ML engineering · data science · applied research · Cairo, Egypt",
   email: "mustafa_sultan03@outlook.com",
   phone: "+201012442284",
   phoneFormatted: "+20 1012442284",
@@ -56,8 +56,11 @@ export const PERSONAL_INFO = {
   linkedin: "https://linkedin.com/in/mustafa-sultan-34251b227",
   scholar: "https://scholar.google.com/citations?user=0GaeCUYAAAAJ&hl=en",
   resume: "mustafa_sultan_resume.pdf",
-  gpa: "3.82",
+  photo: "photo.jpeg",
+  gpa: "3.83",
   gpaMax: "4.00",
+  honors: "Excellent with Honors",
+  deanList: "Dean's List · Fall 2024",
   university: "Nile University",
   degree: "B.Sc. in Artificial Intelligence",
   educationPeriod: "OCT 2022 — JUN 2026",
@@ -69,12 +72,12 @@ export const PROJECTS: Project[] = [
     number: "PROJECT 01 / 2026",
     title: "FGaiB",
     highlightTitle: "Multi-Agent Personal Finance Android Application",
-    subtitle: "GRADUATION GROUP PROJECT · RANKED 1ST",
-    description: "Developed collaboratively as an end-to-end personal finance application with a Python/Django backend and an agentic-coding-assisted mobile interface. LangGraph coordinates specialized financial agents for spending analysis, budgets, savings goals, recurring bills, alerts, and user requests. Confirmation gates protect record-changing actions, PostgreSQL-backed checkpoints preserve context, LangSmith traces agent runs, and a custom admin dashboard tracks usage, tokens, costs, forecasts, and anomalies.",
+    subtitle: "GRADUATION GROUP PROJECT · 1ST AMONG 8 FACULTY COMMITTEES",
+    description: "Developed collaboratively as an end-to-end personal finance application with a Python/Django backend and an agentic-coding-assisted mobile interface. LangGraph coordinates specialized financial agents for spending analysis, budgets, savings goals, recurring bills, alerts, and user requests. Confirmation gates protect record-changing actions, PostgreSQL-backed checkpoints preserve context, LangSmith traces agent runs, and a custom admin dashboard tracks usage, tokens, and LLM costs.",
     tags: ["LangGraph", "LangSmith", "Django Ninja", "PostgreSQL", "REST APIs", "Tool Calling"],
     category: "agent",
     featured: true,
-    metrics: ["1st Ranked Graduation Project", "LangSmith Tracing", "Admin Usage & Cost Analytics"],
+    metrics: ["1st Among 8 Faculty Committees", "LangSmith Tracing", "Admin Usage & Cost Analytics"],
     visualType: "finance"
   },
   {
@@ -172,8 +175,8 @@ export const EXPERTISE_AREAS = [
   },
   {
     icon: "◇",
-    title: "Machine Learning",
-    skills: ["PyTorch", "TensorFlow", "Computer Vision", "NLP"]
+    title: "Data Science & ML",
+    skills: ["Pandas & NumPy", "EDA & Feature Engineering", "Scikit-learn", "PyTorch & TensorFlow", "Computer Vision & NLP", "Model Evaluation"]
   },
   {
     icon: "≡",
@@ -229,6 +232,16 @@ export const CERTIFICATES: Certificate[] = [
     year: "2024",
     image: "certificates/RESEARCH_INTERN_CERTIFICATION.png",
     filterGroup: "research"
+  },
+  {
+    id: "coursera-google-mlops",
+    title: "Machine Learning Operations (MLOps): Getting Started",
+    issuer: "Google Cloud · Verified credential",
+    categoryTag: "COURSERA",
+    year: "2026",
+    image: "certificates/MLOPS_GOOGLE_CLOUD.jpeg",
+    verifyUrl: "https://www.coursera.org/account/accomplishments/verify/UKWHRZG5TPKU",
+    filterGroup: "coursera"
   },
   {
     id: "coursera-mlops",
@@ -325,8 +338,8 @@ export const PROOF_OF_WORK = [
     ]
   },
   {
-    badge: "1st ranked",
-    title: "FGaiB graduation group project in one of eight faculty committees."
+    badge: "1st among 8",
+    title: "FGaiB ranked first among eight graduation-project committees in the faculty."
   },
   {
     badge: "ECPC × 2",

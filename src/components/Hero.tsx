@@ -10,7 +10,8 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
   return (
     <section className="relative min-h-[75vh] flex flex-col justify-center border-b border-white/[0.08] py-16 sm:py-24 lg:py-32">
-      <div className="max-w-4xl space-y-8 sm:space-y-10">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_19rem] items-center gap-12 lg:gap-16">
+        <div className="space-y-8 sm:space-y-10">
         {/* Status Badge */}
         <div>
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/[0.08] bg-[#0d121c]/90 backdrop-blur-md">
@@ -53,12 +54,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
             <span className="text-[#64748b]">(Dean's List: Fall 2024)</span>
           </span>
           <span className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d121c] border border-white/[0.08]">
+            <Sparkles className="w-4 h-4 text-amber-300" />
+            <span className="text-white font-semibold">{PERSONAL_INFO.honors}</span>
+          </span>
+          <span className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d121c] border border-white/[0.08]">
             <BookOpen className="w-4 h-4 text-[#10b981]" />
             <span className="text-white font-semibold">Springer Published Author</span>
           </span>
           <span className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d121c] border border-white/[0.08]">
             <Trophy className="w-4 h-4 text-amber-400" />
-            <span className="text-white font-semibold">1st Ranked Grad Project</span>
+            <span className="text-white font-semibold">1st Among 8 Faculty Committees</span>
           </span>
         </div>
 
@@ -103,6 +108,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
           <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">GenAI</span>
           <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">Agentic AI</span>
         </div>
+        </div>
+
+        <aside className="order-first lg:order-none mx-auto w-full max-w-[15rem] sm:max-w-[17rem] lg:max-w-none" aria-label="Profile photo">
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.12] bg-[#0d121c] p-2 shadow-2xl shadow-black/35">
+            <div className="relative overflow-hidden rounded-[1.3rem] bg-[#e8edf1]">
+              <img
+                src={PERSONAL_INFO.photo}
+                alt="Mustafa Sultan, AI/ML engineer and data scientist"
+                width={646}
+                height={864}
+                loading="eager"
+                fetchPriority="high"
+                className="aspect-[3/4] w-full object-cover object-center"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#090d14] via-[#090d14]/80 to-transparent px-5 pb-5 pt-16">
+                <p className="font-sans text-lg font-bold leading-tight text-white">{PERSONAL_INFO.name}</p>
+                <p className="mt-1 font-mono text-[0.68rem] leading-relaxed text-[#bae6fd]">{PERSONAL_INFO.title}</p>
+              </div>
+            </div>
+          </div>
+          <div className="mx-auto mt-4 flex w-fit items-center gap-2 rounded-full border border-white/[0.08] bg-[#0d121c]/90 px-3.5 py-2 font-mono text-[0.68rem] text-[#a0aec0]">
+            <span className="h-2 w-2 rounded-full bg-[#10b981]" />
+            <span>Based in Cairo, Egypt</span>
+          </div>
+        </aside>
       </div>
     </section>
   );

@@ -24,7 +24,7 @@ export const ExperienceSection: React.FC = () => {
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] pb-4">
               <div className="flex items-center gap-2.5 text-[#38bdf8]">
                 <GraduationCap className="w-5 h-5 flex-shrink-0" />
-                <span className="font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold">Degree & Status</span>
+                <span className="font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold">Degree & Graduation</span>
               </div>
               <span className="font-mono text-xs text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-lg border border-[#10b981]/25 font-semibold">
                 {PERSONAL_INFO.educationPeriod}
@@ -47,12 +47,13 @@ export const ExperienceSection: React.FC = () => {
               </div>
               <div className="text-right">
                 <span className="font-mono text-xs text-[#10b981] block uppercase font-semibold">Honors</span>
-                <span className="font-sans text-sm sm:text-base text-white font-semibold">Dean's List (Fall 2024)</span>
+                <span className="font-sans text-sm sm:text-base text-white font-semibold">{PERSONAL_INFO.honors}</span>
+                <span className="font-mono text-[0.68rem] text-[#64748b] block mt-1">{PERSONAL_INFO.deanList}</span>
               </div>
             </div>
 
             <p className="font-sans text-sm text-[#a0aec0] leading-relaxed">
-              All academic requirements completed with top distinction · Dean's List recognition for Fall 2024.
+              Graduated in June 2026 with an overall grade of Excellent with Honors. Dean's List recognition for Fall 2024.
             </p>
           </SpotlightCard>
         </div>
