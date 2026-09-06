@@ -9,7 +9,7 @@ interface SpotlightCardProps {
 export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = '',
-  spotlightColor = 'rgba(56, 189, 248, 0.1)',
+  spotlightColor = 'rgba(99, 169, 207, 0.06)',
 }) => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -33,7 +33,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-xl border border-white/[0.08] bg-[#0d121c]/80 backdrop-blur-xl transition-all duration-300 hover:border-[#38bdf8]/30 shadow-lg shadow-black/20 ${className}`}
+      className={`studio-card relative overflow-hidden rounded-xl border border-white/[0.08] bg-[var(--surface)]/80 backdrop-blur-xl transition-all duration-300 hover:border-[var(--accent)]/30 shadow-lg shadow-black/20 ${className}`}
     >
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-10 rounded-xl"

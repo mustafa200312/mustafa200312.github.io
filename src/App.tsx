@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ParticlesBackground } from './components/ParticlesBackground';
+import { NAVIGATION } from './data/navigation';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ProjectsSection } from './components/ProjectsSection';
@@ -14,7 +14,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>('work');
+  const [activeSection, setActiveSection] = useState<string>('');
   const [terminalModalOpen, setTerminalModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -24,20 +24,21 @@ export const App: React.FC = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
 
     const handleScroll = () => {
-      const sections = ['work', 'experience', 'community', 'credentials', 'about', 'terminal'];
+      const sections = NAVIGATION.map(item => item.id);
       const scrollPos = window.scrollY + 250;
 
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
-          const top = el.offsetTop;
+          const top = el.getBoundingClientRect().top + window.scrollY;
           const height = el.offsetHeight;
           if (scrollPos >= top && scrollPos < top + height) {
             setActiveSection(sectionId);
-            break;
+            return;
           }
         }
       }
+      setActiveSection('');
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -47,7 +48,7 @@ export const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-[#090d0f] text-[#eef2ed] selection:bg-[#c8f43d] selection:text-[#090d0f]">
       {/* ReactBits Inspired Canvas Particles Mesh Background */}
-      <ParticlesBackground />
+      <div className="studio-grid" aria-hidden="true" />
 
       {/* Floating Dock Header */}
       <Header
@@ -56,14 +57,14 @@ export const App: React.FC = () => {
       />
 
       {/* Main Container */}
-      <main id="main-content" className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 space-y-8">
+      <main id="main-content" className="portfolio-main relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <Hero onOpenTerminal={() => setTerminalModalOpen(true)} />
         <ProjectsSection />
         <ExperienceSection />
         <CommunitySection />
         <ExpertiseSection />
-        <ProofOfWorkSection />
         <CertificateGrid />
+        <ProofOfWorkSection />
         <ExploringNextSection />
         <InteractiveTerminal />
         <ContactSection />

@@ -15,7 +15,7 @@ export const TiltedCard: React.FC<TiltedCardProps> = ({
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (!cardRef.current || matchMedia('(prefers-reduced-motion: reduce), (pointer: coarse)').matches) return;
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;

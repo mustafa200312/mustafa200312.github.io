@@ -5,16 +5,16 @@ import { BookOpen, Trophy, Award, ExternalLink } from 'lucide-react';
 
 export const ProofOfWorkSection: React.FC = () => {
   const icons = [
-    <BookOpen className="w-5 h-5 text-[#38bdf8]" />,
-    <Trophy className="w-5 h-5 text-amber-400" />,
-    <Award className="w-5 h-5 text-[#10b981]" />
+    <BookOpen className="w-5 h-5 text-[var(--accent)]" />,
+    <Trophy className="w-5 h-5 text-[var(--accent)]" />,
+    <Award className="w-5 h-5 text-[var(--accent)]" />
   ];
 
   return (
     <section className="py-16 sm:py-24 lg:py-28 border-b border-white/[0.08]">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 border-b border-white/[0.08] pb-8">
         <div className="space-y-3">
-          <span className="font-mono text-xs sm:text-sm text-[#38bdf8] block font-semibold tracking-wider uppercase">06 · PROOF OF WORK</span>
+          <span className="studio-index">06 / PROOF OF WORK</span>
           <h2 className="font-sans text-3xl sm:text-4xl font-medium text-white tracking-tight">
             Peer-Reviewed Research & Honors
           </h2>
@@ -26,11 +26,11 @@ export const ProofOfWorkSection: React.FC = () => {
           <SpotlightCard key={idx} className="p-6 sm:p-8 space-y-5 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
-                <span className="font-sans text-xl font-bold text-[#38bdf8]">
+                <span className="font-sans text-xl font-bold text-[var(--accent)]">
                   {item.badge}
                 </span>
-                <div className="p-2 rounded-xl bg-[#090d14] border border-white/[0.08]">
-                  {icons[idx] || <Award className="w-5 h-5 text-[#38bdf8]" />}
+                <div className="p-2 rounded-xl bg-[var(--bg)] border border-white/[0.08]">
+                  {icons[idx] || <Award className="w-5 h-5 text-[var(--accent)]" />}
                 </div>
               </div>
 
@@ -47,7 +47,7 @@ export const ProofOfWorkSection: React.FC = () => {
                     href={link.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-between p-2.5 rounded-lg bg-[#090d14] text-[#38bdf8] hover:text-white border border-white/[0.08] hover:border-[#38bdf8]/40 transition-all font-medium"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-[var(--bg)] text-[var(--accent)] hover:text-white border border-white/[0.08] hover:border-[var(--accent)]/40 transition-all font-medium"
                   >
                     <span>{link.text}</span>
                     <ExternalLink className="w-3.5 h-3.5" />

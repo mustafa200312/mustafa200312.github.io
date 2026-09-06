@@ -17,11 +17,11 @@ export const CertificateGrid: React.FC = () => {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 sm:mb-16 border-b border-white/[0.08] pb-8">
         <div className="space-y-3">
-          <span className="font-mono text-xs sm:text-sm text-[#38bdf8] block font-semibold tracking-wider uppercase">05 · CERTIFICATES & RECOGNITION</span>
+          <span className="studio-index">05 / CERTIFICATES & RECOGNITION</span>
           <h2 className="font-sans text-3xl sm:text-4xl font-medium text-white tracking-tight">
             Verified Credentials & Achievements
           </h2>
-          <p className="font-sans text-base text-[#a0aec0] max-w-2xl leading-relaxed">
+          <p className="font-sans text-base text-[var(--text-secondary)] max-w-2xl leading-relaxed">
             A record of academic achievement, industry experience, research, teaching, and student leadership. Click any certificate to view high-resolution document.
           </p>
         </div>
@@ -40,8 +40,8 @@ export const CertificateGrid: React.FC = () => {
               onClick={() => setSelectedGroup(group.id)}
               className={`px-3.5 py-2 rounded-xl transition-all text-xs font-medium ${
                 selectedGroup === group.id
-                  ? 'bg-[#38bdf8] text-[#090c10] font-sans font-semibold shadow-md'
-                  : 'bg-[#0d121c] text-[#a0aec0] border border-white/[0.08] hover:border-white/20 hover:text-white'
+                  ? 'bg-[var(--accent)] text-[var(--bg)] font-sans font-semibold shadow-md'
+                  : 'bg-[var(--surface)] text-[var(--text-secondary)] border border-white/[0.08] hover:border-white/20 hover:text-white'
               }`}
             >
               {group.label}
@@ -51,20 +51,20 @@ export const CertificateGrid: React.FC = () => {
       </div>
 
       {/* Grid of Certificates */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {filteredCerts.map((cert) => (
           <SpotlightCard key={cert.id} className="p-5 sm:p-6 flex flex-col justify-between group cursor-pointer">
             <div onClick={() => setActiveModalCert(cert)} className="space-y-4">
               {/* Image Preview Window */}
-              <div className="relative aspect-[1.5] bg-[#090d14] rounded-xl border border-white/[0.08] overflow-hidden group-hover:border-[#38bdf8]/50 transition-colors">
+              <div className="relative aspect-[1.5] bg-[var(--bg)] rounded-xl border border-white/[0.08] overflow-hidden group-hover:border-[var(--accent)]/50 transition-colors">
                 <img
                   src={cert.image}
                   alt={cert.title}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                  className="w-full h-full object-contain transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-[#090d14]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="flex items-center gap-2 px-3.5 py-2 bg-[#38bdf8] text-[#090c10] font-sans text-xs font-semibold rounded-lg shadow-lg">
+                <div className="absolute inset-0 bg-[var(--bg)]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="flex items-center gap-2 px-3.5 py-2 bg-[var(--accent)] text-[var(--bg)] font-sans text-xs font-semibold rounded-lg shadow-lg">
                     <Maximize2 className="w-4 h-4" />
                     <span>Expand</span>
                   </span>
@@ -72,18 +72,18 @@ export const CertificateGrid: React.FC = () => {
               </div>
 
               <div className="space-y-1">
-                <div className="flex items-center justify-between text-xs font-mono text-[#38bdf8] mb-1">
+                <div className="flex items-center justify-between text-xs font-mono text-[var(--accent)] mb-1">
                   <span>{cert.categoryTag}</span>
-                  <span className="text-[#64748b]">{cert.year}</span>
+                  <span className="text-[var(--text-muted)]">{cert.year}</span>
                 </div>
-                <h3 className="font-sans text-lg font-semibold text-white group-hover:text-[#38bdf8] transition-colors leading-snug break-words">
+                <h3 className="font-sans text-lg font-semibold text-white group-hover:text-[var(--accent)] transition-colors leading-snug break-words">
                   {cert.title}
                 </h3>
-                <p className="font-mono text-xs text-[#a0aec0] mt-1">{cert.issuer}</p>
+                <p className="font-mono text-xs text-[var(--text-secondary)] mt-1">{cert.issuer}</p>
               </div>
             </div>
 
-            <div className="pt-4 mt-4 border-t border-white/[0.08] flex items-center justify-between font-mono text-xs text-[#38bdf8]">
+            <div className="pt-4 mt-4 border-t border-white/[0.08] flex items-center justify-between font-mono text-xs text-[var(--accent)]">
               <button
                 onClick={() => setActiveModalCert(cert)}
                 className="hover:underline flex items-center gap-1 font-medium"

@@ -1,139 +1,15 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { DecryptedText } from './DecryptedText';
-import { ArrowDown, Github, Terminal, Award, BookOpen, Trophy, Sparkles } from 'lucide-react';
-
-interface HeroProps {
-  onOpenTerminal?: () => void;
-}
-
-export const Hero: React.FC<HeroProps> = ({ onOpenTerminal }) => {
-  return (
-    <section className="relative min-h-[75vh] flex flex-col justify-center border-b border-white/[0.08] py-16 sm:py-24 lg:py-32">
-      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_19rem] items-center gap-12 lg:gap-16">
-        <div className="space-y-8 sm:space-y-10">
-        {/* Status Badge */}
-        <div>
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/[0.08] bg-[#0d121c]/90 backdrop-blur-md">
-            <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10b981]"></span>
-            </span>
-            <span className="font-mono text-xs sm:text-sm text-[#a0aec0] tracking-wide">
-              {PERSONAL_INFO.status}
-            </span>
-          </div>
-        </div>
-
-        {/* Headline */}
-        <h1 className="font-sans text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.2] sm:leading-[1.16]">
-          I build AI systems that{' '}
-          <span className="text-[#38bdf8] font-semibold underline decoration-[#38bdf8]/30 underline-offset-8">
-            <DecryptedText text="reason" speed={35} maxIterations={8} />
-          </span>
-          ,{' '}
-          <span className="text-[#10b981] font-semibold">
-            <DecryptedText text="retrieve" speed={35} maxIterations={8} />
-          </span>
-          , and{' '}
-          <em className="not-italic text-white font-bold">
-            <DecryptedText text="act." speed={35} maxIterations={8} />
-          </em>
-        </h1>
-
-        {/* Bio Subtitle */}
-        <p className="font-sans text-lg sm:text-xl text-[#a0aec0] max-w-3xl leading-relaxed">
-          {PERSONAL_INFO.bio}
-        </p>
-
-        {/* Key Credibility Proof Chips */}
-        <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-[#a0aec0] pt-1">
-          <span className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d121c] border border-white/[0.08]">
-            <Award className="w-4 h-4 text-[#38bdf8]" />
-            <span className="text-white font-semibold">{PERSONAL_INFO.gpa} GPA</span>
-            <span className="text-[#64748b]">(Dean's List: Fall 2024)</span>
-          </span>
-          <span className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d121c] border border-white/[0.08]">
-            <Sparkles className="w-4 h-4 text-amber-300" />
-            <span className="text-white font-semibold">{PERSONAL_INFO.honors}</span>
-          </span>
-          <span className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d121c] border border-white/[0.08]">
-            <BookOpen className="w-4 h-4 text-[#10b981]" />
-            <span className="text-white font-semibold">Springer Published Author</span>
-          </span>
-          <span className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0d121c] border border-white/[0.08]">
-            <Trophy className="w-4 h-4 text-amber-400" />
-            <span className="text-white font-semibold">1st Among 8 Faculty Committees</span>
-          </span>
-        </div>
-
-        {/* Actions */}
-        <div className="flex flex-wrap items-center gap-4 font-mono text-xs pt-2">
-          <a
-            href="#work"
-            className="flex items-center justify-center gap-2.5 px-6 py-4 bg-[#38bdf8] text-[#090c10] font-sans font-semibold rounded-xl hover:bg-[#7dd3fc] transition-all shadow-lg shadow-[#38bdf8]/15 text-sm sm:text-base"
-          >
-            <span>View Selected Work</span>
-            <ArrowDown className="w-4 h-4" />
-          </a>
-
-          <a
-            href={PERSONAL_INFO.github}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-center gap-2.5 px-6 py-4 border border-white/10 bg-[#0d121c] text-white hover:border-white/20 rounded-xl transition-all text-sm sm:text-base"
-          >
-            <Github className="w-4 h-4" />
-            <span>GitHub</span>
-          </a>
-
-          {onOpenTerminal && (
-            <button
-              onClick={onOpenTerminal}
-              className="flex items-center justify-center gap-2.5 px-5 py-4 border border-[#38bdf8]/30 bg-[#0d121c] text-[#38bdf8] hover:bg-[#38bdf8]/10 rounded-xl transition-all text-sm sm:text-base"
-            >
-              <Terminal className="w-4 h-4" />
-              <span>CLI Terminal</span>
-            </button>
-          )}
-        </div>
-
-        {/* Core Tech Stack Tags */}
-        <div className="pt-4 flex flex-wrap items-center gap-2.5 font-mono text-xs sm:text-sm text-[#64748b]">
-          <span className="text-white font-medium mr-2">Specializations:</span>
-          <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">Machine learning</span>
-          <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">Deep learning</span>
-          <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">NLP</span>
-          <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">Computer Vision</span>
-          <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">GenAI</span>
-          <span className="px-3 py-1.5 rounded-lg bg-[#0d121c] border border-white/[0.08] text-[#a0aec0]">Agentic AI</span>
-        </div>
-        </div>
-
-        <aside className="order-first lg:order-none mx-auto w-full max-w-[15rem] sm:max-w-[17rem] lg:max-w-none" aria-label="Profile photo">
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.12] bg-[#0d121c] p-2 shadow-2xl shadow-black/35">
-            <div className="relative overflow-hidden rounded-[1.3rem] bg-[#e8edf1]">
-              <img
-                src={PERSONAL_INFO.photo}
-                alt="Mustafa Sultan, AI/ML engineer and data scientist"
-                width={646}
-                height={864}
-                loading="eager"
-                fetchPriority="high"
-                className="aspect-[3/4] w-full object-cover object-center"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#090d14] via-[#090d14]/80 to-transparent px-5 pb-5 pt-16">
-                <p className="font-sans text-lg font-bold leading-tight text-white">{PERSONAL_INFO.name}</p>
-                <p className="mt-1 font-mono text-[0.68rem] leading-relaxed text-[#bae6fd]">{PERSONAL_INFO.title}</p>
-              </div>
-            </div>
-          </div>
-          <div className="mx-auto mt-4 flex w-fit items-center gap-2 rounded-full border border-white/[0.08] bg-[#0d121c]/90 px-3.5 py-2 font-mono text-[0.68rem] text-[#a0aec0]">
-            <span className="h-2 w-2 rounded-full bg-[#10b981]" />
-            <span>Based in Cairo, Egypt</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-  );
-};
+import { ArrowDown, Github, Terminal } from 'lucide-react';
+import { NeuralScene } from './NeuralScene';
+export const Hero: React.FC<{ onOpenTerminal?: () => void }> = ({ onOpenTerminal }) => (
+<section className="studio-hero"><div className="studio-hero-grid"><div className="studio-intro">
+<h1>I build AI systems that <span>reason,</span> retrieve, and <em>act.</em></h1>
+<p>{PERSONAL_INFO.bio}</p><div className="studio-actions">
+<a className="studio-primary" href="#work">View Selected Work <ArrowDown size={17}/></a>
+<a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer"><Github size={17}/> GitHub</a>
+</div></div><div className="hero-visual"><NeuralScene/><div className="hero-portrait"><img src={PERSONAL_INFO.photo} alt="Mustafa Sultan, AI/ML engineer and data scientist" width="646" height="864" fetchPriority="high"/><span>{PERSONAL_INFO.name}</span></div></div></div><div className="studio-identity">
+<div><strong>{PERSONAL_INFO.name}</strong><span>{PERSONAL_INFO.title} · Cairo, Egypt</span></div>
+<a href={PERSONAL_INFO.resume} target="_blank" rel="noreferrer">Read résumé ↗</a>
+{onOpenTerminal && <button onClick={onOpenTerminal}><Terminal size={16}/> Explore via terminal</button>}
+</div></section>);
