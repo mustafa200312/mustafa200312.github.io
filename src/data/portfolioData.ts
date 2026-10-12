@@ -17,7 +17,7 @@ export interface Experience {
   period: string;
   role: string;
   organization: string;
-  location: string;
+  location?: string;
   description: string;
   link?: string;
   linkText?: string;
@@ -27,11 +27,11 @@ export interface Certificate {
   id: string;
   title: string;
   issuer: string;
-  categoryTag: 'INDUSTRY' | 'RESEARCH' | 'COURSERA' | 'ACADEMIC' | 'COMPETITION' | 'COMMUNITY' | 'LEADERSHIP';
+  categoryTag: 'INDUSTRY' | 'RESEARCH' | 'COURSERA' | 'UDEMY' | 'ACADEMIC' | 'COMPETITION' | 'COMMUNITY' | 'LEADERSHIP';
   year: string;
   image: string;
   verifyUrl?: string;
-  filterGroup: 'all' | 'industry' | 'research' | 'coursera' | 'academic';
+  filterGroup: 'all' | 'industry' | 'research' | 'coursera' | 'udemy' | 'academic';
 }
 
 export interface CommunityRole {
@@ -44,10 +44,10 @@ export interface CommunityRole {
 
 export const PERSONAL_INFO = {
   name: "Mustafa Sultan",
-  title: "AI/ML Engineer & Data Scientist",
-  tagline: "I build AI systems that reason, retrieve, and act.",
-  bio: "AI/ML engineer and data scientist building machine learning, multi-agent LLM, RAG, backend API, and computer vision systems.",
-  status: "AI/ML engineering · data science · applied research · Cairo, Egypt",
+  title: "AI/Quant Engineer",
+  tagline: "I turn data into models and intelligent systems.",
+  bio: "AI/Quant Engineer at Stochastic, working across artificial intelligence and quantitative engineering. My portfolio brings together machine learning, data science, computer vision, NLP, applied research, and production software.",
+  status: "AI/Quant Engineer at Stochastic · Cairo, Egypt",
   email: "mustafa_sultan03@outlook.com",
   phone: "+201012442284",
   phoneFormatted: "+20 1012442284",
@@ -56,7 +56,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://linkedin.com/in/mustafa-sultan-34251b227",
   scholar: "https://scholar.google.com/citations?user=0GaeCUYAAAAJ&hl=en",
   resume: "mustafa_sultan_resume.pdf",
-  photo: "photo.jpeg",
+  photo: "images/photo.jpeg",
   gpa: "3.83",
   gpaMax: "4.00",
   honors: "Excellent with Honors",
@@ -143,6 +143,12 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
+    period: "OCT 2026 — PRESENT",
+    role: "AI/Quant Engineer",
+    organization: "Stochastic",
+    description: "Joined Stochastic as an AI/Quant Engineer. Stochastic is an early-stage startup currently being built."
+  },
+  {
     period: "JUL — SEP 2025",
     role: "AI Engineer Intern",
     organization: "CrossWorkers",
@@ -170,13 +176,13 @@ export const EXPERIENCES: Experience[] = [
 export const EXPERTISE_AREAS = [
   {
     icon: "⌁",
-    title: "Agentic AI & LLMs",
-    skills: ["LangGraph", "LangChain", "LangSmith", "RAG & Hybrid Search", "Tool Calling & Memory"]
+    title: "Data Science & ML",
+    skills: ["Pandas & NumPy", "EDA & Feature Engineering", "Scikit-learn", "Model Training & Evaluation"]
   },
   {
     icon: "◇",
-    title: "Data Science & ML",
-    skills: ["Pandas & NumPy", "EDA & Feature Engineering", "Scikit-learn", "PyTorch & TensorFlow", "Computer Vision & NLP", "Model Evaluation"]
+    title: "Deep Learning & AI",
+    skills: ["PyTorch & TensorFlow", "Computer Vision & NLP", "Transfer Learning", "LLMs & RAG", "LangGraph & LangChain"]
   },
   {
     icon: "≡",
@@ -186,7 +192,7 @@ export const EXPERTISE_AREAS = [
   {
     icon: "⌬",
     title: "Research",
-    skills: ["Machine learning", "Quantum computing"]
+    skills: ["Applied Machine Learning", "Quantum Optimization", "Experimental Evaluation", "Quantitative Engineering"]
   }
 ];
 
@@ -215,6 +221,16 @@ export const COMMUNITY_ROLES: CommunityRole[] = [
 ];
 
 export const CERTIFICATES: Certificate[] = [
+  {
+    id: "udemy-pandas-bootcamp",
+    title: "The Complete Pandas Bootcamp 2025: Data Science with Python",
+    issuer: "Udemy · Alexander Hagmann · Course completion",
+    categoryTag: "UDEMY",
+    year: "2026",
+    image: "certificates/udemy-pandas-bootcamp.jpg",
+    verifyUrl: "https://www.udemy.com/certificate/UC-65224d48-f48d-4eb1-bd2a-5ced49f5223b/",
+    filterGroup: "udemy"
+  },
   {
     id: "crossworkers",
     title: "Artificial Intelligence Internship",

@@ -22,7 +22,7 @@ export const ContactSection: React.FC = () => {
             Let’s build something <em className="not-italic text-[var(--accent)] font-semibold">meaningful.</em>
           </h2>
           <p className="font-sans text-sm text-[var(--text-secondary)] max-w-md leading-relaxed">
-            Open for AI engineering roles, agentic workflow development, computer vision research, and production ML systems.
+            Connect with me about machine learning, data science, quantitative research, computer vision, and AI engineering.
           </p>
         </div>
 

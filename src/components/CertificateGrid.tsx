@@ -33,6 +33,7 @@ export const CertificateGrid: React.FC = () => {
             { id: 'industry', label: 'Industry' },
             { id: 'research', label: 'Research' },
             { id: 'coursera', label: 'Coursera AI' },
+            { id: 'udemy', label: 'Udemy' },
             { id: 'academic', label: 'Academic & Competitions' },
           ].map((group) => (
             <button

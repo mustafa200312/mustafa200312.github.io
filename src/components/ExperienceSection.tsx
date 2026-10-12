@@ -31,9 +31,14 @@ export const ExperienceSection: React.FC = () => {
               </span>
             </div>
 
-            <div className="space-y-1">
+            <div className="education-intro">
+              <figure className="education-photo">
+                <img src="images/graduation.jpg" alt="Mustafa Sultan at his Nile University graduation ceremony" width="4302" height="6453" loading="lazy" />
+              </figure>
+              <div className="space-y-1">
               <h3 className="font-sans text-xl sm:text-2xl font-bold text-white leading-snug">{PERSONAL_INFO.degree}</h3>
               <p className="font-mono text-xs sm:text-sm text-[var(--text-secondary)]">{PERSONAL_INFO.university} · Egypt</p>
+              </div>
             </div>
 
             {/* GPA Box */}
@@ -62,7 +67,7 @@ export const ExperienceSection: React.FC = () => {
         <div className="lg:col-span-7 space-y-8">
           <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm text-[var(--accent)] pb-3 border-b border-white/[0.08] font-semibold tracking-wider">
             <Briefcase className="w-4 h-4 flex-shrink-0" />
-            <span>INTERNSHIP & RESEARCH TIMELINE</span>
+            <span>CAREER & RESEARCH TIMELINE</span>
           </div>
 
           <div className="relative pl-6 sm:pl-8 space-y-8 sm:space-y-10 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-px before:bg-white/10">
@@ -74,10 +79,10 @@ export const ExperienceSection: React.FC = () => {
                 <SpotlightCard className="p-5 sm:p-7 space-y-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="font-mono text-xs sm:text-sm text-[var(--accent)] font-semibold">{exp.period}</span>
-                    <div className="flex items-center gap-1.5 font-mono text-xs text-[var(--text-muted)]">
+                    {exp.location && <div className="flex items-center gap-1.5 font-mono text-xs text-[var(--text-muted)]">
                       <MapPin className="w-3.5 h-3.5 text-[var(--accent)] flex-shrink-0" />
                       <span>{exp.location}</span>
-                    </div>
+                    </div>}
                   </div>
 
                   <div className="space-y-0.5">

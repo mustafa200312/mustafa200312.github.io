@@ -81,7 +81,7 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ certificate,
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08] pt-4 font-mono text-xs">
           <div className="flex items-center gap-2 text-[var(--text-secondary)]">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent)]" />
-            <span>Official Verified Credential</span>
+            <span>{certificate.categoryTag === 'UDEMY' ? 'Course Completion Certificate' : 'Official Verified Credential'}</span>
           </div>
 
           <div className="flex items-center gap-3">

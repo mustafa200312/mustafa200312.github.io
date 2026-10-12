@@ -12,7 +12,7 @@ export const ExpertiseSection: React.FC = () => {
             Technical Stack & Capabilities
           </h2>
           <p className="font-sans text-base text-[var(--text-secondary)] max-w-2xl leading-relaxed">
-            From model research to production APIs and agentic orchestration.
+            From data analysis and model training to applied research and production software.
           </p>
         </div>
       </div>

@@ -46,7 +46,7 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#090d0f] text-[#eef2ed] selection:bg-[#c8f43d] selection:text-[#090d0f]">
+    <div className="relative min-h-screen bg-[var(--bg)] text-[#eef2ed] selection:bg-[#c8f43d] selection:text-[var(--bg)]">
       {/* ReactBits Inspired Canvas Particles Mesh Background */}
       <div className="studio-grid" aria-hidden="true" />
 
